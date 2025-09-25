@@ -1,41 +1,8 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Phone, Mail, Instagram, MapPin } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      toast({
-        title: "Erro",
-        description: "Por favor, preencha todos os campos.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Simula envio da mensagem
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve."
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   const openWhatsApp = () => {
     window.open("https://wa.me/5511921562675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank");
   };
@@ -108,51 +75,34 @@ export const Contact = () => {
             </Button>
           </div>
 
-          {/* Formulário de contato */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Envie uma mensagem</CardTitle>
-              <CardDescription>
-                Preencha o formulário e entraremos em contato
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="contact-name">Nome</Label>
-                  <Input
-                    id="contact-name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Seu nome completo"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="contact-email">Email</Label>
-                  <Input
-                    id="contact-email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="seu@email.com"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="contact-message">Mensagem</Label>
-                  <Textarea
-                    id="contact-message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Descreva seu projeto..."
-                    rows={5}
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  Enviar mensagem
+          {/* Informações adicionais */}
+          <div className="space-y-8">
+            <Card className="border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-center">Fale conosco agora!</CardTitle>
+                <CardDescription className="text-center">
+                  Clique no botão do WhatsApp para conversar diretamente
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-center">
+                <Button 
+                  size="lg" 
+                  className="w-full" 
+                  onClick={openWhatsApp}
+                >
+                  Iniciar conversa no WhatsApp
                 </Button>
-              </form>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+            
+            <div className="text-center p-6 bg-secondary/30 rounded-lg">
+              <h4 className="text-lg font-semibold mb-2">Horário de atendimento</h4>
+              <p className="text-muted-foreground">
+                Segunda a Sexta: 9h às 18h<br />
+                Sábado: 9h às 12h
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

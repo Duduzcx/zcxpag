@@ -4,6 +4,11 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "ZcxPages Portfolio",
+    url: "https://zcxpages.netlify.app",
+    description: "Nosso portfólio oficial com exemplos de projetos e design moderno"
+  },
+  {
     title: "Pro P. Podologia",
     url: "https://propepodologia.com",
     description: "Site institucional para clínica de podologia com agendamento online"

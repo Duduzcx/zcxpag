@@ -96,18 +96,27 @@ export const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Redes Sociais</h4>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
+                <button 
+                  onClick={() => window.open("https://instagram.com/zcxpages", "_blank")}
+                  className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
+                >
                   <Instagram className="h-5 w-5" />
-                  <span className="text-white/80">@zcxpages</span>
-                </div>
-                <div className="flex items-center space-x-3">
+                  <span>@zcxpages</span>
+                </button>
+                <button 
+                  onClick={() => window.open("https://facebook.com/zcxpagesoficial", "_blank")}
+                  className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
+                >
                   <Facebook className="h-5 w-5" />
-                  <span className="text-white/80">/zcxpagesoficial</span>
-                </div>
-                <div className="flex items-center space-x-3">
+                  <span>/zcxpagesoficial</span>
+                </button>
+                <button 
+                  onClick={() => window.open("https://tiktok.com/@zcxpages", "_blank")}
+                  className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
+                >
                   <span className="text-lg">🎵</span>
-                  <span className="text-white/80">@zcxpages</span>
-                </div>
+                  <span>@zcxpages</span>
+                </button>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight px-4">
           Transforme suas ideias em{" "}
           <span className="text-gradient">sites profissionais</span>{" "}
           que vendem!
@@ -43,7 +43,7 @@ export const Hero = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-white text-white hover:bg-white/10 text-lg px-8 py-4 h-auto"
+            className="border-white/30 bg-transparent text-white hover:bg-white hover:text-primary hover:border-white text-lg px-8 py-4 h-auto transition-all duration-300"
             onClick={scrollToServices}
           >
             Ver serviços

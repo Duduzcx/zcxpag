@@ -75,53 +75,6 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        {/* Formulário de depoimento */}
-        <div className="max-w-2xl mx-auto mb-16">
-          <Card className="border-2 border-primary/20">
-            <CardHeader>
-              <CardTitle>Deixe seu depoimento</CardTitle>
-              <CardDescription>
-                Compartilhe sua experiência conosco
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Nome</Label>
-                  <Input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Seu nome completo"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="seu@email.com"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="testimonial">Depoimento</Label>
-                  <Textarea
-                    id="testimonial"
-                    value={formData.testimonial}
-                    onChange={(e) => setFormData({ ...formData, testimonial: e.target.value })}
-                    placeholder="Conte-nos sobre sua experiência..."
-                    rows={4}
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  Enviar depoimento
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
 
         {/* Lista de depoimentos */}
         {testimonials.length > 0 && (
