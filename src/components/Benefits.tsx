@@ -26,11 +26,12 @@ export const Benefits = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className="flex items-start space-x-4 p-6 rounded-lg bg-card border card-hover animate-slide-up" 
-                style={{animationDelay: `${0.1 * (index + 1)}s`}}
+                className="flex items-start space-x-4 p-6 rounded-lg bg-card border card-hover animate-slide-up"
               >
                 <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-110">
+                  <div
+                    className="w-8 h-8 bg-primary rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-110"
+                  >
                     <Check className="h-5 w-5 text-white" />
                   </div>
                 </div>

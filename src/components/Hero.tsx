@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-bg.jpg";
 
 export const Hero = () => {
   const openWhatsApp = () => {
-    window.open("https://wa.me/5511921562675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank");
+  window.open("https://wa.me/5511921572675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank");
   };
 
   const scrollToServices = () => {
@@ -47,12 +47,12 @@ export const Hero = () => {
             onClick={scrollToServices}
           >
             Ver serviços
-            <ArrowDown className="ml-2 h-5 w-5" />
           </Button>
+          {/* Seta removida, mantendo apenas a da parte inferior */}
         </div>
       </div>
       
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onClick={scrollToServices}>
+      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer bottom-16" onClick={scrollToServices}>
         <ArrowDown className="h-8 w-8 text-white/70 hover:text-white transition-colors" />
       </div>
     </section>

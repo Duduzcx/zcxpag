@@ -137,7 +137,7 @@ All colors MUST be HSL.
 
   /* WhatsApp pulse animation - minimized */
   .whatsapp-pulse {
-    animation: pulse-scale 3s infinite;
+    animation: pulse-scale 20s infinite;
   }
 
   @keyframes pulse-scale {
@@ -187,6 +187,17 @@ All colors MUST be HSL.
     }
   }
 
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   /* Scroll reveal animations */
   .fade-in-up {
     opacity: 0;
@@ -197,5 +208,35 @@ All colors MUST be HSL.
   .fade-in-up.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Loop animation */
+  .animate-loop {
+    animation: loopFade 60s ease-in-out infinite;
+  }
+
+  @keyframes loopFade {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(1.04);
+    }
+  }
+
+  /* Fall loop animation */
+  .animate-fall-loop {
+    animation: fallLoop 1000s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes fallLoop {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(100px);
+      }
   }
 }

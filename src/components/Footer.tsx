@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Facebook } from "lucide-react";
+import { SiTiktok } from "react-icons/si";
 
 export const Footer = () => {
   const openWhatsApp = () => {
-    window.open("https://wa.me/5511921562675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank");
+  window.open("https://wa.me/5511921572675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank");
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -95,20 +96,18 @@ export const Footer = () => {
             {/* Redes sociais */}
             <div>
               <h4 className="text-lg font-semibold mb-4">Redes Sociais</h4>
-              <div className="space-y-4">
-                <button 
-                  onClick={() => window.open("https://instagram.com/zcxpages", "_blank")}
-                  className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
-                >
-                  <Instagram className="h-5 w-5" />
-                  <span>@zcxpages</span>
+              <div className="flex items-center gap-6 mt-2">
+                <button onClick={() => window.open("https://wa.me/5511921572675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank")} className="text-white/80 hover:bg-green-500 hover:scale-110 transition-all duration-300 rounded-full p-1">
+                  <img src="/src/assets/whatsapp-logo.png" alt="WhatsApp" className="h-7 w-7" style={{filter: 'brightness(0) invert(1)'}} />
                 </button>
-                <button 
-                  onClick={() => window.open("https://facebook.com/zcxpagesoficial", "_blank")}
-                  className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
-                >
-                  <Facebook className="h-5 w-5" />
-                  <span>/zcxpagesoficial</span>
+                <button onClick={() => window.open("https://www.facebook.com/profile.php?id=61580634924797", "_blank")} className="text-white/80 hover:bg-blue-600 hover:scale-110 transition-all duration-300 rounded-full p-1">
+                  <Facebook className="h-7 w-7" />
+                </button>
+                <button onClick={() => window.open("https://instagram.com/zcxpages", "_blank")} className="text-white/80 hover:bg-pink-500 hover:scale-110 transition-all duration-300 rounded-full p-1">
+                  <Instagram className="h-7 w-7" />
+                </button>
+                <button onClick={() => window.open("https://www.tiktok.com/@zcxpages", "_blank")} className="text-white/80 hover:bg-black hover:scale-110 transition-all duration-300 rounded-full p-1">
+                  <SiTiktok className="h-7 w-7" />
                 </button>
               </div>
             </div>

@@ -4,7 +4,7 @@ import { Phone, Mail, Instagram, MapPin } from "lucide-react";
 
 export const Contact = () => {
   const openWhatsApp = () => {
-    window.open("https://wa.me/5511921562675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank");
+  window.open("https://wa.me/5511921572675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank");
   };
 
   const openEmail = () => {

@@ -3,68 +3,74 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ExternalLink } from "lucide-react";
 
 const projects = [
-  {
-    title: "ZcxPages Portfolio",
-    url: "https://zcxpages.netlify.app",
-    description: "Nosso portfólio oficial com exemplos de projetos e design moderno"
-  },
-  {
-    title: "Pro P. Podologia",
-    url: "https://propepodologia.com",
-    description: "Site institucional para clínica de podologia com agendamento online"
-  },
-  {
-    title: "Advocacia S.A.",
-    url: "https://advocaciasa.netlify.app",
-    description: "Landing page profissional para escritório de advocacia"
-  },
-  {
-    title: "Sabor Nordestino",
-    url: "https://sabornordestino.netlify.app", 
-    description: "E-commerce para produtos típicos nordestinos"
-  }
+	{
+		title: "ZcxPages Portfolio",
+		url: "https://zcxpages.netlify.app",
+		description: "Nosso portfólio oficial com exemplos de projetos e design moderno",
+	},
+	{
+		title: "Pro P. Podologia",
+		url: "https://propepodologia.com",
+		description: "Site institucional para clínica de podologia com agendamento online",
+	},
+	{
+		title: "Advocacia S.A.",
+		url: "https://advocaciasa.netlify.app",
+		description: "Landing page profissional para escritório de advocacia",
+	},
+	{
+		title: "Sabor Nordestino",
+		url: "https://sabornordestino.netlify.app",
+		description: "Restaurante de comidas típicas nordestinas.",
+	},
+	{
+		title: "BarberPro",
+		url: "https://barberproo.netlify.app",
+		description: "Loja online que vende produtos para barbearias profissionais.",
+	},
 ];
 
 export const Portfolio = () => {
-  return (
-    <section id="portfolio" className="py-20 bg-secondary/50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Nosso <span className="text-gradient">Portfólio</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Conheça alguns dos projetos que já desenvolvemos para nossos clientes
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="card-hover border-none animate-slide-up" 
-              style={{animationDelay: `${0.1 * (index + 1)}s`}}
-            >
-              <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-base">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button 
-                  variant="outline" 
-                  className="w-full transform hover:scale-105 transition-all duration-300"
-                  onClick={() => window.open(project.url, "_blank")}
-                >
-                  Ver projeto
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+	return (
+		<section id="portfolio" className="py-20 bg-secondary/50">
+			<div className="max-w-6xl mx-auto px-6">
+				<div className="text-center mb-16 animate-fade-in">
+					<h2 className="text-4xl md:text-5xl font-bold mb-6">
+						Nosso{" "}
+						<span className="text-gradient">Portfólio</span>
+					</h2>
+					<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+						Conheça alguns dos projetos que já desenvolvemos para nossos clientes
+					</p>
+				</div>
+
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{projects.map((project, index) => (
+						<Card
+							key={index}
+							className="card-hover border-none flex flex-col justify-center items-center p-6 min-h-[260px] transition-all duration-700 ease-in-out opacity-0 translate-y-8 animate-[fadeInUp_1s_ease-in-out_forwards]"
+							style={{ animationDelay: `${0.2 * (index + 1)}s` }}
+						>
+							<CardHeader>
+								<CardTitle className="text-xl">{project.title}</CardTitle>
+								<CardDescription className="text-base">
+									{project.description}
+								</CardDescription>
+							</CardHeader>
+							<CardContent>
+								<Button
+									variant="outline"
+									className="w-full transform hover:scale-105 transition-all duration-300"
+									onClick={() => window.open(project.url, "_blank")}
+								>
+									Ver projeto
+									<ExternalLink className="ml-2 h-4 w-4" />
+								</Button>
+							</CardContent>
+						</Card>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 };

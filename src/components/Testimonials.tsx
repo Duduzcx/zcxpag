@@ -163,7 +163,7 @@ export const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={testimonial.id} 
-                className="card-hover animate-slide-up" 
+                className="card-hover animate-fade-in" 
                 style={{animationDelay: `${0.1 * (index + 1)}s`}}
               >
                 <CardHeader className="pb-4">
