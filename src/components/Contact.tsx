@@ -7,10 +7,18 @@ export const Contact = () => {
     window.open("https://wa.me/5511921562675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank");
   };
 
+  const openEmail = () => {
+    window.open("mailto:contato@zcxpages.com?subject=Interesse em criar um site&body=Olá! Gostaria de saber mais sobre a criação de um site.", "_blank");
+  };
+
+  const openInstagram = () => {
+    window.open("https://instagram.com/zcxpages", "_blank");
+  };
+
   return (
     <section id="contact" className="py-20 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Entre em <span className="text-gradient">Contato</span>
           </h2>
@@ -21,41 +29,50 @@ export const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Informações de contato */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
             <div className="space-y-6">
               <h3 className="text-2xl font-bold mb-6">Nossas informações</h3>
               
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <button 
+                onClick={openWhatsApp}
+                className="flex items-center space-x-4 w-full p-4 rounded-lg hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 group"
+              >
+                <div className="w-12 h-12 bg-primary/10 group-hover:bg-primary/20 rounded-full flex items-center justify-center transition-colors">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
-                <div>
-                  <p className="font-semibold">WhatsApp</p>
+                <div className="text-left">
+                  <p className="font-semibold group-hover:text-primary transition-colors">WhatsApp</p>
                   <p className="text-muted-foreground">(11) 92156-2675</p>
                 </div>
-              </div>
+              </button>
 
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <button 
+                onClick={openEmail}
+                className="flex items-center space-x-4 w-full p-4 rounded-lg hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 group"
+              >
+                <div className="w-12 h-12 bg-primary/10 group-hover:bg-primary/20 rounded-full flex items-center justify-center transition-colors">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
-                <div>
-                  <p className="font-semibold">Email</p>
+                <div className="text-left">
+                  <p className="font-semibold group-hover:text-primary transition-colors">Email</p>
                   <p className="text-muted-foreground">contato@zcxpages.com</p>
                 </div>
-              </div>
+              </button>
 
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <button 
+                onClick={openInstagram}
+                className="flex items-center space-x-4 w-full p-4 rounded-lg hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 group"
+              >
+                <div className="w-12 h-12 bg-primary/10 group-hover:bg-primary/20 rounded-full flex items-center justify-center transition-colors">
                   <Instagram className="h-6 w-6 text-primary" />
                 </div>
-                <div>
-                  <p className="font-semibold">Instagram</p>
+                <div className="text-left">
+                  <p className="font-semibold group-hover:text-primary transition-colors">Instagram</p>
                   <p className="text-muted-foreground">@zcxpages</p>
                 </div>
-              </div>
+              </button>
 
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 p-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
@@ -68,7 +85,7 @@ export const Contact = () => {
 
             <Button 
               size="lg" 
-              className="w-full sm:w-auto" 
+              className="w-full sm:w-auto transform hover:scale-105 transition-all duration-300" 
               onClick={openWhatsApp}
             >
               Falar no WhatsApp
@@ -76,8 +93,8 @@ export const Contact = () => {
           </div>
 
           {/* Informações adicionais */}
-          <div className="space-y-8">
-            <Card className="border-primary/20">
+          <div className="space-y-8 animate-slide-up" style={{animationDelay: '0.4s'}}>
+            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105">
               <CardHeader>
                 <CardTitle className="text-center">Fale conosco agora!</CardTitle>
                 <CardDescription className="text-center">
@@ -87,7 +104,7 @@ export const Contact = () => {
               <CardContent className="text-center">
                 <Button 
                   size="lg" 
-                  className="w-full" 
+                  className="w-full transform hover:scale-105 transition-all duration-300" 
                   onClick={openWhatsApp}
                 >
                   Iniciar conversa no WhatsApp
@@ -95,7 +112,7 @@ export const Contact = () => {
               </CardContent>
             </Card>
             
-            <div className="text-center p-6 bg-secondary/30 rounded-lg">
+            <div className="text-center p-6 bg-secondary/30 rounded-lg transform hover:scale-105 transition-all duration-300">
               <h4 className="text-lg font-semibold mb-2">Horário de atendimento</h4>
               <p className="text-muted-foreground">
                 Segunda a Sexta: 9h às 18h<br />

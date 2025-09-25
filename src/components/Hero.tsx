@@ -19,22 +19,22 @@ export const Hero = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
       
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight px-4">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white animate-fade-in">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight px-4 animate-slide-up" style={{animationDelay: '0.2s'}}>
           Transforme suas ideias em{" "}
           <span className="text-gradient">sites profissionais</span>{" "}
           que vendem!
         </h1>
         
-        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-gray-200">
+        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-gray-200 animate-slide-up" style={{animationDelay: '0.4s'}}>
           Landing pages, sites institucionais e lojas virtuais criados sob medida 
           para destacar o seu negócio online.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up" style={{animationDelay: '0.6s'}}>
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary-dark text-lg px-8 py-4 h-auto"
+            className="bg-primary hover:bg-primary-dark text-lg px-8 py-4 h-auto transform hover:scale-105 transition-all duration-300"
             onClick={openWhatsApp}
           >
             Quero meu site agora
@@ -43,7 +43,7 @@ export const Hero = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-white/30 bg-transparent text-white hover:bg-white hover:text-primary hover:border-white text-lg px-8 py-4 h-auto transition-all duration-300"
+            className="border-white/30 bg-transparent text-white hover:bg-white hover:text-primary hover:border-white text-lg px-8 py-4 h-auto transition-all duration-300 transform hover:scale-105"
             onClick={scrollToServices}
           >
             Ver serviços
@@ -52,8 +52,8 @@ export const Hero = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-8 w-8 text-white/70" />
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onClick={scrollToServices}>
+        <ArrowDown className="h-8 w-8 text-white/70 hover:text-white transition-colors" />
       </div>
     </section>
   );

@@ -29,7 +29,7 @@ export const Portfolio = () => {
   return (
     <section id="portfolio" className="py-20 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Nosso <span className="text-gradient">Portfólio</span>
           </h2>
@@ -40,7 +40,11 @@ export const Portfolio = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="card-hover border-none">
+            <Card 
+              key={index} 
+              className="card-hover border-none animate-slide-up" 
+              style={{animationDelay: `${0.1 * (index + 1)}s`}}
+            >
               <CardHeader>
                 <CardTitle className="text-xl">{project.title}</CardTitle>
                 <CardDescription className="text-base">
@@ -50,7 +54,7 @@ export const Portfolio = () => {
               <CardContent>
                 <Button 
                   variant="outline" 
-                  className="w-full"
+                  className="w-full transform hover:scale-105 transition-all duration-300"
                   onClick={() => window.open(project.url, "_blank")}
                 >
                   Ver projeto

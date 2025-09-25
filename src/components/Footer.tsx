@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className="py-16 bg-gradient-to-r from-primary to-primary-dark">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Pronto para ter um site que gera resultados? 🚀
+            Pronto para ter um site que gera resultados?
           </h2>
           <p className="text-xl mb-8 text-white/90">
             Clique no botão abaixo e fale comigo agora mesmo.
@@ -109,13 +109,6 @@ export const Footer = () => {
                 >
                   <Facebook className="h-5 w-5" />
                   <span>/zcxpagesoficial</span>
-                </button>
-                <button 
-                  onClick={() => window.open("https://tiktok.com/@zcxpages", "_blank")}
-                  className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
-                >
-                  <span className="text-lg">🎵</span>
-                  <span>@zcxpages</span>
                 </button>
               </div>
             </div>
