@@ -1,3 +1,16 @@
+  /* Animação lenta de queda para checks */
+  .check-fall-loop {
+    animation: checkFallLoop 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes checkFallLoop {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(32px);
+    }
+  }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -122,6 +135,16 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientPulse 3.5s ease-in-out infinite;
+  }
+
+  @keyframes gradientPulse {
+    0%, 100% {
+      filter: brightness(1) saturate(1);
+    }
+    50% {
+      filter: brightness(1.7) saturate(2.5);
+    }
   }
 
   /* Card hover effects */

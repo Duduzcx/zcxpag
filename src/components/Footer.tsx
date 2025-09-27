@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Facebook } from "lucide-react";
-import { SiTiktok } from "react-icons/si";
+import { SiWhatsapp } from "react-icons/si";
 
 export const Footer = () => {
   const openWhatsApp = () => {
@@ -98,7 +98,7 @@ export const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Redes Sociais</h4>
               <div className="flex items-center gap-6 mt-2">
                 <button onClick={() => window.open("https://wa.me/5511921572675?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site.", "_blank")} className="text-white/80 hover:bg-green-500 hover:scale-110 transition-all duration-300 rounded-full p-1">
-                  <img src="/src/assets/whatsapp-logo.png" alt="WhatsApp" className="h-7 w-7" style={{filter: 'brightness(0) invert(1)'}} />
+                  <SiWhatsapp className="h-7 w-7 text-white" />
                 </button>
                 <button onClick={() => window.open("https://www.facebook.com/profile.php?id=61580634924797", "_blank")} className="text-white/80 hover:bg-blue-600 hover:scale-110 transition-all duration-300 rounded-full p-1">
                   <Facebook className="h-7 w-7" />
@@ -107,7 +107,7 @@ export const Footer = () => {
                   <Instagram className="h-7 w-7" />
                 </button>
                 <button onClick={() => window.open("https://www.tiktok.com/@zcxpages", "_blank")} className="text-white/80 hover:bg-black hover:scale-110 transition-all duration-300 rounded-full p-1">
-                  <SiTiktok className="h-7 w-7" />
+                  <svg className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12.75 2v14.25a2.25 2.25 0 1 1-2.25-2.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75A3.75 3.75 0 1 0 15 16.25V8.5a5.25 5.25 0 0 0 4.5 2.25V7.25A3.75 3.75 0 0 1 15.75 3.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75A5.25 5.25 0 0 0 21 7.25v7.5A7.75 7.75 0 0 1 13.25 22a7.75 7.75 0 0 1-7.75-7.75V2h7.25z"/></svg>
                 </button>
               </div>
             </div>

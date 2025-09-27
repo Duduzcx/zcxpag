@@ -1,9 +1,10 @@
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const benefits = [
   "Design moderno e personalizado",
   "Sites responsivos (funcionam em celular, tablet e PC)",
-  "Entrega rápida e suporte dedicado", 
+  "Entrega rápida e suporte dedicado",
   "Conexão direta com WhatsApp, Instagram e redes sociais",
   "Planos acessíveis para diferentes negócios"
 ];
@@ -12,31 +13,69 @@ export const Benefits = () => {
   return (
     <section className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Por que escolher a <span className="text-gradient">ZcxPages</span>?
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        {/* Título */}
+        <div className="text-center mb-16">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Por que escolher a{" "}
+            <motion.span
+              className="text-gradient"
+              animate={{ scale: [1, 1.07, 1] }}
+              transition={{ duration: 2.8, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+            >
+              ZcxPages
+            </motion.span>?
+          </motion.h2>
+
+          <motion.p
+            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Oferecemos soluções completas com qualidade e agilidade para seu negócio
-          </p>
+          </motion.p>
         </div>
-        
+
+        {/* Cards */}
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
-              <div 
-                key={index} 
-                className="flex items-start space-x-4 p-6 rounded-lg bg-card border card-hover animate-slide-up"
+              <motion.div
+                key={index}
+                className="flex items-start space-x-4 p-6 rounded-lg bg-card border card-hover"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
               >
-                <div className="flex-shrink-0">
-                  <div
-                    className="w-8 h-8 bg-primary rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-110"
-                  >
-                    <Check className="h-5 w-5 text-white" />
-                  </div>
-                </div>
+                {/* Ícone animado */}
+                <motion.div
+                  className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+                  animate={{
+                    y: [0, 12, 0],
+                    rotate: [0, 0, 0],
+                    scale: [1, 1.15, 1],
+                    opacity: [1, 1, 1],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Check className="h-5 w-5 text-white" />
+                </motion.div>
+
+                {/* Texto */}
                 <p className="text-lg font-medium">{benefit}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -33,41 +34,49 @@ export const Testimonials = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const saved = localStorage.getItem("zcx-testimonials");
-    if (saved) {
-      try {
-        setTestimonials(JSON.parse(saved));
-      } catch (error) {
-        console.error("Erro ao carregar depoimentos:", error);
-      }
-    }
+    // Busca depoimentos da API Netlify
+    fetch("/.netlify/functions/google-sheet")
+      .then((res) => res.json())
+      .then((data) => {
+        setTestimonials(Array.isArray(data) ? data.reverse() : []);
+      })
+      .catch((err) => {
+        console.error("Erro ao buscar depoimentos:", err);
+      });
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     try {
       const validatedData = testimonialSchema.parse(formData);
-      
       const newTestimonial: Testimonial = {
         id: Date.now().toString(),
         name: validatedData.name,
         email: validatedData.email,
         testimonial: validatedData.testimonial,
-        date: new Date().toLocaleDateString("pt-BR")
+        date: new Date().toLocaleDateString("pt-BR"),
       };
-
-      const updatedTestimonials = [newTestimonial, ...testimonials];
-      setTestimonials(updatedTestimonials);
-      localStorage.setItem("zcx-testimonials", JSON.stringify(updatedTestimonials));
-      
-      setFormData({ name: "", email: "", testimonial: "" });
-      
-      toast({
-        title: "Obrigado!",
-        description: "Seu depoimento foi enviado com sucesso."
+      // Envia para a API Netlify
+      const res = await fetch("/.netlify/functions/google-sheet", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newTestimonial),
       });
+      if (res.ok) {
+        setTestimonials([newTestimonial, ...testimonials]);
+        setFormData({ name: "", email: "", testimonial: "" });
+        toast({
+          title: "Obrigado!",
+          description: "Seu depoimento foi enviado com sucesso."
+        });
+      } else {
+        toast({
+          title: "Erro",
+          description: "Ocorreu um erro ao enviar seu depoimento.",
+          variant: "destructive"
+        });
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
@@ -92,7 +101,13 @@ export const Testimonials = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient">Depoimentos</span> dos Clientes
+            <motion.span
+              className="text-gradient"
+              animate={{ scale: [1, 1.07, 1] }}
+              transition={{ duration: 2.8, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+            >
+              Depoimentos
+            </motion.span> dos Clientes
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Veja o que nossos clientes falam sobre nosso trabalho

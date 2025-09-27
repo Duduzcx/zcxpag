@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, Instagram, MapPin } from "lucide-react";
@@ -8,7 +9,7 @@ export const Contact = () => {
   };
 
   const openEmail = () => {
-    window.open("mailto:contato@zcxpages.com?subject=Interesse em criar um site&body=Olá! Gostaria de saber mais sobre a criação de um site.", "_blank");
+    window.open("mailto:zcxpages@gmail.com?subject=Interesse em criar um site&body=Olá! Gostaria de saber mais sobre a criação de um site.", "_blank");
   };
 
   const openInstagram = () => {
@@ -20,7 +21,13 @@ export const Contact = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Entre em <span className="text-gradient">Contato</span>
+            Entre em <motion.span
+              className="text-gradient"
+              animate={{ scale: [1, 1.07, 1] }}
+              transition={{ duration: 2.8, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+            >
+              Contato
+            </motion.span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Pronto para começar seu projeto? Fale conosco agora mesmo
@@ -55,7 +62,7 @@ export const Contact = () => {
                 </div>
                 <div className="text-left">
                   <p className="font-semibold group-hover:text-primary transition-colors">Email</p>
-                  <p className="text-muted-foreground">contato@zcxpages.com</p>
+                  <p className="text-muted-foreground">zcxpages@gmail.com</p>
                 </div>
               </button>
 

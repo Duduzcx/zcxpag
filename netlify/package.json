@@ -1,0 +1,10 @@
+{
+  "name": "netlify-functions-zcxpages",
+  "version": "1.0.0",
+  "main": "google-sheet.js",
+  "type": "commonjs",
+  "dependencies": {
+    "googleapis": "^133.0.0",
+    "google-auth-library": "^9.0.0"
+  }
+}

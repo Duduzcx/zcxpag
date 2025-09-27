@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Monitor, TrendingUp, ShoppingCart, Settings } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
 	{
@@ -31,7 +32,13 @@ export const Services = () => {
 				<div className="text-center mb-16 animate-fade-in">
 					<h2 className="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">
 						Serviços{" "}
-						<span className="text-gradient">Oferecidos</span>
+									<motion.span
+										className="text-gradient"
+										animate={{ scale: [1, 1.07, 1] }}
+										transition={{ duration: 2.8, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+									>
+										Oferecidos
+									</motion.span>
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
 						Soluções completas em desenvolvimento web para fazer seu negócio crescer
@@ -46,12 +53,25 @@ export const Services = () => {
 							className="card-hover border-none flex flex-col justify-center items-center p-6 min-h-[260px] transition-all duration-700 ease-in-out opacity-0 translate-y-8 animate-[fadeInUp_1s_ease-in-out_forwards]"
 							style={{ animationDelay: `${0.2 * (index + 1)}s` }}
 						>
-							<CardHeader className="text-center pb-4 flex flex-col items-center justify-center">
-								<service.icon className="h-10 w-10 text-blue-500 mx-auto mb-4 transition-transform duration-300 hover:scale-110" />
-								<CardTitle className="text-xl text-center animate-slide-up">
-									{service.title}
-								</CardTitle>
-							</CardHeader>
+											<CardHeader className="text-center pb-4 flex flex-col items-center justify-center">
+												<motion.div
+													animate={{
+														rotate: [0, 8, -8, 0],
+														scale: [1, 1.08, 1],
+													}}
+													transition={{
+														duration: 2.5,
+														repeat: Infinity,
+														ease: "easeInOut"
+													}}
+													className="mb-4"
+												>
+													<service.icon className="h-10 w-10 text-blue-500 mx-auto transition-transform duration-300 hover:scale-110" />
+												</motion.div>
+												<CardTitle className="text-xl text-center animate-slide-up">
+													{service.title}
+												</CardTitle>
+											</CardHeader>
 							<CardContent>
 								<CardDescription className="text-center text-base animate-fade-in">
 									{service.description}
