@@ -29,11 +29,7 @@ const projects = [
 		url: "https://sabornordestino.netlify.app",
 		description: "Restaurante de comidas típicas nordestinas.",
 	},
-	{
-		title: "BarberPro",
-		url: "https://barberproo.netlify.app",
-		description: "Loja online que vende produtos para barbearias profissionais.",
-	},
+
 ];
 
 export const Portfolio = () => {
@@ -64,7 +60,7 @@ export const Portfolio = () => {
 										if (project.title === "Pro P. Podologia") bgImage = propeImg;
 										if (project.title === "Advocacia S.A.") bgImage = advocaciaImg;
 										if (project.title === "Sabor Nordestino") bgImage = sabornordestinoImg;
-										if (project.title === "BarberPro") bgImage = barberproImg;
+
 										return (
 																	<motion.div
 																		key={index}
