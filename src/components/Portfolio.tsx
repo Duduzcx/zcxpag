@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ExternalLink } from "lucide-react";
 import advocaciaImg from "@/assets/advocacia.JPG";
 import portifolioImg from "@/assets/portifolio.JPG";
-import propeImg from "@/assets/prope.JPG";
 import sabornordestinoImg from "@/assets/sabornordestino.JPG";
 import barberproImg from "@/assets/barberpro.JPG";
 import { motion } from "framer-motion";
@@ -11,13 +10,8 @@ import { motion } from "framer-motion";
 const projects = [
 	{
 		title: "ZcxPages Portfolio",
-		url: "https://zcxpages.netlify.app",
+		url: "https://zcxportifolio.netlify.app/",
 		description: "Nosso portfólio oficial com exemplos de projetos e design moderno",
-	},
-	{
-		title: "Pro P. Podologia",
-		url: "https://propepodologia.com",
-		description: "Site institucional para clínica de podologia com agendamento online",
 	},
 	{
 		title: "Advocacia S.A.",
@@ -57,7 +51,6 @@ export const Portfolio = () => {
 										// Atribui a imagem local respectiva
 										let bgImage: string | undefined = undefined;
 										if (project.title === "ZcxPages Portfolio") bgImage = portifolioImg;
-										if (project.title === "Pro P. Podologia") bgImage = propeImg;
 										if (project.title === "Advocacia S.A.") bgImage = advocaciaImg;
 										if (project.title === "Sabor Nordestino") bgImage = sabornordestinoImg;
 

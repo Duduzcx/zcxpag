@@ -119,13 +119,7 @@ export const Contact = () => {
               </CardContent>
             </Card>
             
-            <div className="text-center p-6 bg-secondary/30 rounded-lg transform hover:scale-105 transition-all duration-300">
-              <h4 className="text-lg font-semibold mb-2">Horário de atendimento</h4>
-              <p className="text-muted-foreground">
-                Segunda a Sexta: 9h às 18h<br />
-                Sábado: 9h às 12h
-              </p>
-            </div>
+            {/* Horário de atendimento removido conforme solicitação */}
           </div>
         </div>
       </div>
